@@ -83,14 +83,13 @@ public class MainActivity extends AppCompatActivity {
                 // getTasks -> able to retrieve all data fields
                 ArrayList<Task> data = db.getTasks();
                 ArrayList<String> data2 = db.getTaskContent();
-                db.close();
 
                 ArrayAdapter adapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1,data );
                 lv.setAdapter(adapter);
                 // retrieve all tasks from database table
                 //al = db.getTasks();
                 //adapter.notifyDataSetChanged();
-                //db.close();
+                db.close();
 
                 String txt = "";
                 for (int i = 0; i < data.size(); i++) {
